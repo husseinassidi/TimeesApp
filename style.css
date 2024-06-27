@@ -25,6 +25,7 @@ nav{
     height: auto;
     padding: 20px 30px 14px 30px;
     text-align: center;
+    width: auto;
 }
 
 
@@ -45,7 +46,7 @@ nav h1{
     height: 100%;
 }
 
-.right-side-bar{
+.left-side-bar{
 
     background: #E9EAC8;
     flex-grow: 1;
@@ -62,14 +63,14 @@ nav h1{
     background: #E9EAC8;
 }
 
-.left-side-bar{
+.right-side-bar{
     flex-grow: 1;
     background: #E9EAC8;
 
 
 }
 
-.right-side-bar h1{
+.left-side-bar h1{
     font-weight: 700;
     font-style: normal;
     color:#850F8D ;
@@ -100,5 +101,56 @@ nav h1{
 }
 
 
+nav .fa-bars {
+    display: none;
+}
 
+@media only screen and (max-width: 1024px) {
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    nav .fa-bars {
+        display: block;
+        order: -1;
+        color: #E9EAC8;
+        font-size: 50px;
+    }
+    nav h1{ 
+        font-size: 3.5rem;
 
+    }
+
+    .Timees-ops{
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    nav .fa-bars {
+        display: block;
+        order: -1;
+        color: #E9EAC8;
+        font-size: 30px; 
+    }
+    nav h1{ 
+        font-size: 2.5rem;
+
+    }
+
+    .Timees-ops{
+        flex-direction: column;
+    }
+
+    .left-side-bar{
+        height: 100vh;
+        gap:10%;
+        align-items: center;
+    }
+}
