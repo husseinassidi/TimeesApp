@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@100..900&display=swap');
+
+/* variables */
+
+  
+*{
+    box-sizing: 0;
+    padding: 0;
+    margin: 0;
+    
+}
+
+body {
+    background-color: #F8F9D7;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+
+}
+
+nav{
+    background-color: #850F8D;
+    height: auto;
+    padding: 20px 30px 14px 30px;
+    text-align: center;
+}
+
+
+nav h1{
+    color:#F8F9D7 ;
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 100;
+    font-size: 5rem;
+    margin: 0;
+                                                
+}
+
+.Timees-ops{
+    display: flex;
+    justify-content: space-between;
+    gap: 3%;
+    padding: 10px 20px;
+    height: 100%;
+}
+
+.right-side-bar{
+
+    background: #E9EAC8;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px 17px;
+    gap:8%;
+    padding-bottom: 0%;
+}
+.tasks-dashboard{
+    flex-grow: 3;
+
+    background: #E9EAC8;
+}
+
+.left-side-bar{
+    flex-grow: 1;
+    background: #E9EAC8;
+
+
+}
+
+.right-side-bar h1{
+    font-weight: 700;
+    font-style: normal;
+    color:#850F8D ;
+    font-size: 2rem;
+}
+
+.sidees{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+}
+.sidees h2{
+    color: #850F8D;
+}    
+
+.side-btn{
+    border: none;
+    background: #E9EAC8 ;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+}
+
+.side-btn:hover{
+    color: #a634af;
+}
+
+
+
+
