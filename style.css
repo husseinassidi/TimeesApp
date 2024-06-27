@@ -60,7 +60,6 @@ nav h1{
 .tasks-dashboard{
     flex-grow: 3;
 
-    background: #E9EAC8;
 }
 
 .right-side-bar{
@@ -105,6 +104,72 @@ nav .fa-bars {
     display: none;
 }
 
+
+/* dashbaord section */
+
+.tasks-dashboard{
+    display: flex;
+    flex-direction: column;
+    gap:7%;
+    padding: 8% 5%;
+}
+.task {
+    padding: 2% 5%;
+    background-color: #E9EAC8;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 30px; /* Adjust this value as needed */
+    align-items: center;
+}
+
+.task-info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:2%;
+    flex-grow: 2;
+}
+
+.task-info h3{
+    font-size: 2rem;
+}
+.task-info h5{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.task-btn{
+    display: flex;
+    flex-grow: 2;
+    justify-content: flex-start;
+
+}
+.task-btn i{
+    font-size: 4rem;
+    margin-left: 4%;
+}
+.task-btn .fa-trash{
+    color: #B40000;
+}
+.task-btn .fa-circle-check{
+    color: #0FBC2B;
+}
+.task-status{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    color:#49B7D9 ;
+    align-items: center;
+
+
+}
+.task-bt i,h5{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+/*  */
+
+/* Responsive */
+
 @media only screen and (max-width: 1024px) {
     nav {
         display: flex;
@@ -124,6 +189,11 @@ nav .fa-bars {
 
     .Timees-ops{
         flex-direction: column;
+    }
+    .left-side-bar{
+        height: 100vh;
+        gap:10%;
+        align-items: center;
     }
 }
 
