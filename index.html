@@ -37,13 +37,13 @@
                     <!-- add task container when side button is clicked -->
                     <form id="task-form" class="task-form">
                         <label for="task-name">Taskee name</label>
-                        <input type="text" maxlength="35" placeholder="enter your goal" class="task-name">
+                        <input type="text" maxlength="35" placeholder="enter your goal" class="task-name" required>
                 
                         <label for="task-desc">Description</label>
                         <input type="text" id="task-desc" placeholder="your task description" maxlength="50">
                 
-                        <label for="task-category">Category</label>
-                        <select id="task-category" class="task-category">
+                        <label for="task-category" >Category</label>
+                        <select id="task-category" class="task-category" required>
                             <option value="work">work</option>
                             <option value="learning">learning</option>
                             <option value="home">home</option>
@@ -51,13 +51,13 @@
                         </select>
                 
                         <label for="task-person">assign to</label>
-                        <select id="task-person" class="task-person">
+                        <select id="task-person" class="task-person" required>
                             <option value="user-person">You</option>
                         </select>
                 
                         <label for="task-due-date">due to:</label>
-                        <input type="date" id="task-due-date">
-                        <input type="time" id="task-due-time" >
+                        <input type="date" id="task-due-date" required>
+                        <input type="time" id="task-due-time" required>
                 
                         <button type="submit">add taskee</button>
                     </form>
@@ -75,9 +75,9 @@
                         <div class="post-person-form-container">
                             <form action="" class="person-form">
                                 <label for="person_name">Person name</label>
-                                <input type="text" id="person_name" maxlength="30">
+                                <input type="text" id="person_name" maxlength="30" required>
                                 <label for="person_organization">Organization</label>
-                                <input type="text" id="person_organization" maxlength="30">
+                                <input type="text" id="person_organization" maxlength="30" >
                                 <button id="submit-person" type="submit">Add Person</button>
                             </form>
                         </div>
@@ -98,7 +98,7 @@
                 <div class="category-form-container">
                     <form action="" class="task-category-form">
                         <label for="category-name">Category Name</label>
-                        <input type="text" id="category-name" maxlength="30" placeholder="Enter category name">
+                        <input type="text" id="category-name" maxlength="30" placeholder="Enter category name"required>
                         <button type="submit">Add Category</button>
                     </form>
                 </div>

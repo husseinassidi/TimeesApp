@@ -86,8 +86,9 @@ nav .fa-bars {
     background: #E9EAC8;
     font-size: 1.3rem;
     cursor: pointer;
-    width: 100%; /* Ensure button takes the full width */
-    text-align: left; /* Align text to the left */
+    width: 40%;
+    display: flex;
+    text-align: left;
 }
 
 .side-btn:hover {
@@ -218,6 +219,13 @@ button {
     font-weight: 400;
     cursor: pointer;
     margin-top: 10px;
+}
+
+
+@media only screen and (max-width: 1517px) {
+    body, p, h1, h2, h3, h4, h5, h6, span, a, li, div {
+        font-size: 1.25em; /* Increase the font size by 25% */
+    }
 }
 
 /* Responsive Design */
