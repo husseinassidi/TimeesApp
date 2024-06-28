@@ -48,7 +48,6 @@ nav .fa-bars {
 
 /* Left Side Bar */
 .left-side-bar {
-    background: #E9EAC8;
     flex-shrink: 0; /* Prevents shrinking */
     flex-grow: 1; /* Allows growing */
     display: flex;
@@ -94,18 +93,17 @@ nav .fa-bars {
 .side-btn:hover {
     color: #a634af;
 }
-
 .tool-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
-    width: 100%; /* Ensure container takes the full width */
+    width: 100%;
 }
 
 /* Tasks Dashboard */
 .tasks-dashboard {
-    flex-grow: 1; /* Takes up the remaining space */
+    flex-grow: 4; /* Takes up the remaining space */
     display: flex;
     flex-direction: column;
     gap: 7%;
@@ -135,6 +133,7 @@ nav .fa-bars {
     align-items: center;
     gap: 2%;
     flex-grow: 2;
+    max-width: 50%;
 }
 
 .task-info h3 {
@@ -175,8 +174,16 @@ nav .fa-bars {
     justify-content: space-around;
     color: #49B7D9;
     align-items: center;
-}
+    font-size: 1.5rem;
 
+}
+.task-status span{
+    flex-grow: 1;
+    display: flex;
+    gap: 4%;
+    flex-wrap: nowrap;
+    margin-left: 10%;
+}
 /* Form Containers */
 .task-form,
 .person-form,
@@ -193,6 +200,7 @@ input[type="text"],
 select,
 input[type="date"],
 input[type="time"] {
+    font-size: 1.4rem;
     border: none;
     background-color: #c5c788;
     width: 100%;
@@ -213,48 +221,135 @@ button {
 }
 
 /* Responsive Design */
-@media only screen and (max-width: 1024px) {
-    nav {
-        flex-direction: column;
+@media only screen and (max-width: 1367px) {
+
+    nav{
+        display: flex;
+        justify-content: space-around;
         align-items: center;
     }
 
-    nav .fa-bars {
-        display: block;
-        order: -1;
-        color: #E9EAC8;
-        font-size: 30px;
-        cursor: pointer;
-    }
+    .pre-task-form-container{
 
-    nav h1 {
-        font-size: 3rem;
-    }
+        min-width: 70%;
 
-    .Timees-ops {
-        flex-direction: column;
     }
-
-    .left-side-bar {
-        height: auto;
-        gap: 10%;
+    .pre-task-form-container form{
         align-items: center;
     }
 
-    .side-btn {
+    .pre-task-form-container form input,select{
         text-align: center;
     }
 
     .sidees {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        min-width: auto;
+        gap: 10px;
+        align-items: center;
+    }
+    body{
+        overflow-y:scroll ;
+        min-height:max-content;
+    }
+    
+    nav {
+        flex-direction: row;
+        align-items: center;
     }
 
-    .sidees h2:first-child {
+
+    nav .fa-bars {
+        display: block;
+        order: -1;
+        color: #E9EAC8;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    nav h1 {
+        font-size: 5rem;
+    }
+
+    nav  .fa-bars {
+        font-size: 5rem;
+    }
+
+    .Timees-ops {
+        flex-direction: column;
+        height: 100vh; /* Ensure it takes up the full height of the viewport */
+    }
+
+    .left-side-bar {
+        height: 100%;
+        gap: 10%;
+        align-items: center;
+        width: 100%; /* Make it take the full width of the screen */
+        margin-bottom: 10px;
+        display: none;
+        
+    }
+
+    .sidees {
+        min-width: auto;
+        gap: 10px; /* Adjust gap for smaller screens */
+    }
+
+    .tasks-dashboard {
+        height: max-content;
+        flex-grow: 1;
+        width: 100%; /* Make it take the full width of the screen */
+        align-items: center;
+        padding: 5%;
+        gap: 10px;
+        overflow-y:scroll ;
+        flex-shrink: 0;
+    }
+
+    .tasks-dashboard .task {
+        min-width: 100%;
+        height: auto; /* Adjust the height to fit the content */
+        margin-bottom: 10px; /* Add some space between tasks */
+        flex-wrap:wrap-reverse;
+        gap: 5px;
+        justify-content: space-around;
+
+    }
+
+    .task-info {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .task-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .task-info h5 {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+    
+    /* Task Buttons */
+    .task-btn {
+        margin: 0px;
+        padding: 0px;
+
+
+    }
+
+    .tool-container{
+        align-items: center;
+    }
+    
+    .task-btn i {
+        font-size: 1.8rem;
+
+    }
+    .side-btn{
         text-align: center;
-        width: 100%;
     }
 }
 
@@ -265,6 +360,7 @@ button {
         flex-direction: column;
         align-items: center;
     }
+
 
     nav .fa-bars {
         display: block;
@@ -284,16 +380,14 @@ button {
     }
 
     .left-side-bar {
+        padding: 0;
         height: auto;
         gap: 10%;
         align-items: center;
         width: 100%; /* Make it take the full width of the screen */
     }
 
-    .sidees {
-        min-width: auto;
-        gap: 10px; /* Adjust gap for smaller screens */
-    }
+
 
     .tasks-dashboard {
         height: max-content;
@@ -342,16 +436,11 @@ button {
         font-size: 1.8rem;
 
     }
-    
-    .task-btn .fa-trash {
-
+    .sidees {
+        display: flex;
+        min-width: auto;
+        gap: 10px;
+        align-items: center;
     }
     
-    .task-btn .fa-circle-check {
-
-    }
-    
-    .task-status {
-
-    }
 }

@@ -10,7 +10,10 @@
 <body>
     <nav>
         <h1>Timees</h1>
+        <div class="menu-bar">
         <i class="fa-solid fa-bars"></i>
+
+        </div>
     </nav>
 
     <div class="Timees-ops">
@@ -23,7 +26,10 @@
                     <h2><i class="fa-solid fa-thumbtack"></i>   Tasks</h2>
                 <button class="add-task-tgl side-btn">
                     Add Task
+                    <div>
                     <i class="fa-solid fa-plus"></i>
+
+                    </div>
                 </button>
                 </div>
 
@@ -68,13 +74,14 @@
                         <i class="fa-solid fa-plus"></i></button>
                         <div class="post-person-form-container">
                             <form action="" class="person-form">
-                                <label for="">Person name</label>
-                                <input type="text" maxlength="30">
-                                <label for="">organization</label>
-                                <input type="text" maxlength="30">
-                                <button> add person</button>
+                                <label for="person_name">Person name</label>
+                                <input type="text" id="person_name" maxlength="30">
+                                <label for="person_organization">Organization</label>
+                                <input type="text" id="person_organization" maxlength="30">
+                                <button id="submit-person" type="submit">Add Person</button>
                             </form>
                         </div>
+                        
 
                         
                 </div>
@@ -99,186 +106,9 @@
 
         </aside>
         <main class="section tasks-dashboard">
-            <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
 
-            </div>
-            <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
 
-            </div>
-            <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
 
-            </div>
-            <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
-
-            </div> <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
-
-            </div> <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
-
-            </div> <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
-
-            </div> <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
-
-            </div> <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
-
-            </div> <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
-
-            </div> <div class="task">
-                <div class="task-info">
-                    <h3>Task name</h3>
-                    <h5>Category</h5>
-                    <h5>Person</h5>
-                </div>
-                <div class="task-btn">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-                <div class="task-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <h5>pending</h5>
-                    <h5>13:00</h5>
-                </div>
-
-            </div>
         </main>
 
 
