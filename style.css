@@ -1,226 +1,357 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+/* General resets */
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@100..900&display=swap');
-
-/* variables */
-
-  
-*{
-    box-sizing: 0;
+* {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    
 }
 
 body {
     background-color: #F8F9D7;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
     font-family: "Inter", sans-serif;
-
+    margin: 0;
+}
+body::-webkit-scrollbar{
+    display: none;
 }
 
-nav{
+/* Navigation */
+nav {
     background-color: #850F8D;
-    height: auto;
     padding: 20px 30px 14px 30px;
     text-align: center;
-    width: auto;
-}
-
-
-nav h1{
-    color:#F8F9D7 ;
-    font-family: 'Audiowide', sans-serif;
-    font-weight: 100;
-    font-size: 5rem;
-    margin: 0;
-                                                
-}
-
-.Timees-ops{
     display: flex;
     justify-content: space-between;
-    gap: 3%;
-    padding: 10px 20px;
-    height: 100%;
+    align-items: center;
 }
 
-.left-side-bar{
-
-    background: #E9EAC8;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 30px 17px;
-    gap:8%;
-    padding-bottom: 0%;
+nav h1 {
+    color: #F8F9D7;
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 100;
+    font-size: 3.5rem;
+    margin: 0;
 }
-.tasks-dashboard{
-    flex-grow: 3;
-
-}
-
-.right-side-bar{
-    flex-grow: 1;
-    background: #E9EAC8;
-
-
-}
-
-.left-side-bar h1{
-    font-weight: 700;
-    font-style: normal;
-    color:#850F8D ;
-    font-size: 2rem;
-}
-
-.sidees{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-
-}
-.sidees h2{
-    color: #850F8D;
-}    
-
-.side-btn{
-    border: none;
-    background: #E9EAC8 ;
-    font-size: 1.3rem;
-    cursor: pointer;
-
-}
-
-.side-btn:hover{
-    color: #a634af;
-}
-
 
 nav .fa-bars {
     display: none;
 }
 
+/* Timees Operations */
+.Timees-ops {
+    display: flex;
+    gap: 3%;
+    padding: 10px 20px;
+    height: 100vh; /* Adjust height as needed */
+    overflow: hidden; /* Prevents overflow issues */
+}
 
-/* dashbaord section */
-
-.tasks-dashboard{
+/* Left Side Bar */
+.left-side-bar {
+    background: #E9EAC8;
+    flex-shrink: 0; /* Prevents shrinking */
+    flex-grow: 1; /* Allows growing */
     display: flex;
     flex-direction: column;
-    gap:7%;
-    padding: 8% 5%;
+    justify-content: flex-start;
+    padding: 30px 17px;
+    gap: 8%;
+    overflow-y: auto; /* Allow vertical scrolling if needed */
 }
+
+.left-side-bar::-webkit-scrollbar{
+    display: none;
+}
+
+.left-side-bar h1 {
+    font-weight: 700;
+    font-style: normal;
+    color: #850F8D;
+    font-size: 2rem;
+}
+
+.sidees {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%; /* Ensure sidees take the full width of the sidebar */
+}
+
+.sidees h2 {
+    color: #850F8D;
+}
+
+.side-btn {
+    border: none;
+    background: #E9EAC8;
+    font-size: 1.3rem;
+    cursor: pointer;
+    width: 100%; /* Ensure button takes the full width */
+    text-align: left; /* Align text to the left */
+}
+
+.side-btn:hover {
+    color: #a634af;
+}
+
+.tool-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%; /* Ensure container takes the full width */
+}
+
+/* Tasks Dashboard */
+.tasks-dashboard {
+    flex-grow: 1; /* Takes up the remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 7%;
+    padding: 8% 5%;
+    overflow-y: scroll; /* Allow vertical scrolling */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.tasks-dashboard::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+}
+
 .task {
     padding: 2% 5%;
     background-color: #E9EAC8;
     display: flex;
     justify-content: space-around;
-    border-radius: 30px; /* Adjust this value as needed */
+    border-radius: 30px;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping of content if necessary */
 }
 
-.task-info{
+.task-info {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap:2%;
+    gap: 2%;
     flex-grow: 2;
 }
 
-.task-info h3{
+.task-info h3 {
     font-size: 2rem;
 }
-.task-info h5{
+
+.task-info h5 {
     font-size: 1.5rem;
     font-weight: 300;
 }
-.task-btn{
-    display: flex;
-    flex-grow: 2;
-    justify-content: flex-start;
 
+/* Task Buttons */
+.task-btn {
+    display: flex;
+    flex-direction: row; /* Ensure buttons are in a row */
+    gap: 10px; /* Adjust the gap between buttons */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
 }
-.task-btn i{
+
+.task-btn i {
     font-size: 4rem;
     margin-left: 4%;
+    cursor: pointer;
 }
-.task-btn .fa-trash{
+
+.task-btn .fa-trash {
     color: #B40000;
 }
-.task-btn .fa-circle-check{
+
+.task-btn .fa-circle-check {
     color: #0FBC2B;
 }
-.task-status{
+
+.task-status {
     flex-grow: 1;
     display: flex;
     justify-content: space-around;
-    color:#49B7D9 ;
+    color: #49B7D9;
     align-items: center;
-
-
 }
-.task-bt i,h5{
-    font-size: 1.5rem;
-    font-weight: 300;
+
+/* Form Containers */
+.task-form,
+.person-form,
+.task-category-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #c5c788;
+    padding: 10px;
+    border-radius: 10px;
 }
-/*  */
 
-/* Responsive */
+input[type="text"],
+select,
+input[type="date"],
+input[type="time"] {
+    border: none;
+    background-color: #c5c788;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
 
+button {
+    border: none;
+    background-color: #a634af;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #cecfa9;
+    font-size: 1.3rem;
+    font-weight: 400;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
 @media only screen and (max-width: 1024px) {
     nav {
-        display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         align-items: center;
     }
+
     nav .fa-bars {
         display: block;
         order: -1;
         color: #E9EAC8;
-        font-size: 50px;
-    }
-    nav h1{ 
-        font-size: 3.5rem;
-
+        font-size: 30px;
+        cursor: pointer;
     }
 
-    .Timees-ops{
+    nav h1 {
+        font-size: 3rem;
+    }
+
+    .Timees-ops {
         flex-direction: column;
     }
-    .left-side-bar{
-        height: 100vh;
-        gap:10%;
+
+    .left-side-bar {
+        height: auto;
+        gap: 10%;
         align-items: center;
+    }
+
+    .side-btn {
+        text-align: center;
+    }
+
+    .sidees {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .sidees h2:first-child {
+        text-align: center;
+        width: 100%;
     }
 }
 
+
 @media only screen and (max-width: 600px) {
+    
     nav {
-        display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         align-items: center;
     }
+
     nav .fa-bars {
         display: block;
         order: -1;
         color: #E9EAC8;
-        font-size: 30px; 
+        font-size: 20px;
+        cursor: pointer;
     }
-    nav h1{ 
+
+    nav h1 {
         font-size: 2.5rem;
-
     }
 
-    .Timees-ops{
+    .Timees-ops {
         flex-direction: column;
+        height: 100vh; /* Ensure it takes up the full height of the viewport */
     }
 
-    .left-side-bar{
-        height: 100vh;
-        gap:10%;
+    .left-side-bar {
+        height: auto;
+        gap: 10%;
         align-items: center;
+        width: 100%; /* Make it take the full width of the screen */
+    }
+
+    .sidees {
+        min-width: auto;
+        gap: 10px; /* Adjust gap for smaller screens */
+    }
+
+    .tasks-dashboard {
+        height: max-content;
+        flex-grow: 1;
+        width: 100%; /* Make it take the full width of the screen */
+        align-items: center;
+        padding: 5%;
+        gap: 10px;
+    }
+
+    .tasks-dashboard .task {
+        min-width: 100%;
+        height: auto; /* Adjust the height to fit the content */
+        margin-bottom: 10px; /* Add some space between tasks */
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: space-around;
+
+    }
+
+    .task-info {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .task-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .task-info h5 {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+    
+    /* Task Buttons */
+    .task-btn {
+        margin: 0px;
+        padding: 0px;
+
+
+    }
+    
+    .task-btn i {
+        font-size: 1.8rem;
+
+    }
+    
+    .task-btn .fa-trash {
+
+    }
+    
+    .task-btn .fa-circle-check {
+
+    }
+    
+    .task-status {
+
     }
 }

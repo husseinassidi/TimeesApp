@@ -18,30 +18,85 @@
         <aside class="section left-side-bar">
             <h1>Timees Tools</h1>
             <div class="sidees side-tasks">
-                <h2><i class="fa-solid fa-thumbtack"></i>   Tasks</h2>
-                <button class="side-btn">
+                <div class="tool-container">
+
+                    <h2><i class="fa-solid fa-thumbtack"></i>   Tasks</h2>
+                <button class="add-task-tgl side-btn">
                     Add Task
                     <i class="fa-solid fa-plus"></i>
                 </button>
+                </div>
+
+                <div class="pre-task-form-container   ">
+                    <!-- add task container when side button is clicked -->
+                    <form id="task-form" class="task-form">
+                        <label for="task-name">Taskee name</label>
+                        <input type="text" maxlength="35" placeholder="enter your goal" class="task-name">
+                
+                        <label for="task-desc">Description</label>
+                        <input type="text" id="task-desc" placeholder="your task description" maxlength="50">
+                
+                        <label for="task-category">Category</label>
+                        <select id="task-category" class="task-category">
+                            <option value="work">work</option>
+                            <option value="learning">learning</option>
+                            <option value="home">home</option>
+                            <option value="hobbies">hobbies</option>
+                        </select>
+                
+                        <label for="task-person">assign to</label>
+                        <select id="task-person" class="task-person">
+                            <option value="user-person">You</option>
+                        </select>
+                
+                        <label for="task-due-date">due to:</label>
+                        <input type="date" id="task-due-date">
+                        <input type="time" id="task-due-time" >
+                
+                        <button type="submit">add taskee</button>
+                    </form>
+                </div>
+                
+                
     
 
             </div>
             <div class="sidees side-people">
                 <h2><i class="fa-solid fa-person"></i>  People</h2>
-                <button class="side-btn">Add People
-                <i class="fa-solid fa-plus"></i></button>
-                <button class="side-btn">View People <i class="fa-solid fa-eye"></i></button>
-                
+                <div class="tool-container">
+                    <button class="add-person-btn side-btn">Add People
+                        <i class="fa-solid fa-plus"></i></button>
+                        <div class="post-person-form-container">
+                            <form action="" class="person-form">
+                                <label for="">Person name</label>
+                                <input type="text" maxlength="30">
+                                <label for="">organization</label>
+                                <input type="text" maxlength="30">
+                                <button> add person</button>
+                            </form>
+                        </div>
+
+                        
+                </div>
+
+
+
 
             </div>
             <div class="sidees side-category">
                 <h2><i class="fa-solid fa-layer-group"></i> Categories</h2>
-
-                    <button class="side-btn">Add Category <i class="fa-solid fa-plus"></i></button>
-                    <button class="side-btn">View Categories <i class="fa-solid fa-eye"></i></button>
-                
-
+                <div class="tool-container">
+                    <button class="add-cat-btn side-btn">Add Category <i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div class="category-form-container">
+                    <form action="" class="task-category-form">
+                        <label for="category-name">Category Name</label>
+                        <input type="text" id="category-name" maxlength="30" placeholder="Enter category name">
+                        <button type="submit">Add Category</button>
+                    </form>
+                </div>
             </div>
+
         </aside>
         <main class="section tasks-dashboard">
             <div class="task">
@@ -61,19 +116,177 @@
                 </div>
 
             </div>
-        </main>
-        <aside class="section right-side-bar">
-            <h1>left-side</h1>
-            <div class="calender"></div>
-            <div class="drag-area"></div>
-        </aside>
+            <div class="task">
+                <div class="task-info">
+                    <h3>Task name</h3>
+                    <h5>Category</h5>
+                    <h5>Person</h5>
+                </div>
+                <div class="task-btn">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="task-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <h5>pending</h5>
+                    <h5>13:00</h5>
+                </div>
 
-        <div class="task-form">
-            
-        </div>
+            </div>
+            <div class="task">
+                <div class="task-info">
+                    <h3>Task name</h3>
+                    <h5>Category</h5>
+                    <h5>Person</h5>
+                </div>
+                <div class="task-btn">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="task-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <h5>pending</h5>
+                    <h5>13:00</h5>
+                </div>
+
+            </div>
+            <div class="task">
+                <div class="task-info">
+                    <h3>Task name</h3>
+                    <h5>Category</h5>
+                    <h5>Person</h5>
+                </div>
+                <div class="task-btn">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="task-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <h5>pending</h5>
+                    <h5>13:00</h5>
+                </div>
+
+            </div> <div class="task">
+                <div class="task-info">
+                    <h3>Task name</h3>
+                    <h5>Category</h5>
+                    <h5>Person</h5>
+                </div>
+                <div class="task-btn">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="task-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <h5>pending</h5>
+                    <h5>13:00</h5>
+                </div>
+
+            </div> <div class="task">
+                <div class="task-info">
+                    <h3>Task name</h3>
+                    <h5>Category</h5>
+                    <h5>Person</h5>
+                </div>
+                <div class="task-btn">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="task-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <h5>pending</h5>
+                    <h5>13:00</h5>
+                </div>
+
+            </div> <div class="task">
+                <div class="task-info">
+                    <h3>Task name</h3>
+                    <h5>Category</h5>
+                    <h5>Person</h5>
+                </div>
+                <div class="task-btn">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="task-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <h5>pending</h5>
+                    <h5>13:00</h5>
+                </div>
+
+            </div> <div class="task">
+                <div class="task-info">
+                    <h3>Task name</h3>
+                    <h5>Category</h5>
+                    <h5>Person</h5>
+                </div>
+                <div class="task-btn">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="task-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <h5>pending</h5>
+                    <h5>13:00</h5>
+                </div>
+
+            </div> <div class="task">
+                <div class="task-info">
+                    <h3>Task name</h3>
+                    <h5>Category</h5>
+                    <h5>Person</h5>
+                </div>
+                <div class="task-btn">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="task-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <h5>pending</h5>
+                    <h5>13:00</h5>
+                </div>
+
+            </div> <div class="task">
+                <div class="task-info">
+                    <h3>Task name</h3>
+                    <h5>Category</h5>
+                    <h5>Person</h5>
+                </div>
+                <div class="task-btn">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="task-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <h5>pending</h5>
+                    <h5>13:00</h5>
+                </div>
+
+            </div> <div class="task">
+                <div class="task-info">
+                    <h3>Task name</h3>
+                    <h5>Category</h5>
+                    <h5>Person</h5>
+                </div>
+                <div class="task-btn">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="task-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <h5>pending</h5>
+                    <h5>13:00</h5>
+                </div>
+
+            </div>
+        </main>
+
 
     
     </div>
+
+    <script src="app.js"></script>
+
     
 </body>
 </html>
