@@ -221,12 +221,47 @@ button {
     margin-top: 10px;
 }
 
+.pre-task-form-container,
+.post-person-form-container,
+.category-form-container {
+    display: none;
+}
+
 
 @media only screen and (max-width: 1517px) {
-    body, p, h1, h2, h3, h4, h5, h6, span, a, li, div {
-        font-size: 1.25em; /* Increase the font size by 25% */
+    body {
+        font-size: 1.1em; /* This will scale the body text up by 10% */
+    }
+    h1 {
+        font-size: 5rem;
+    }
+    h2 {
+        font-size: 4.5rem;
+    }
+    h3 {
+        font-size: 4rem;
+    }
+    h4 {
+        font-size: 3.5rem;
+    }
+    h5 {
+        font-size: 3rem;
+    }
+    h6 {
+        font-size: 2.5rem;
+    }
+    p, span, a, li, div {
+        font-size: 1.2rem; /* Adjust this value as needed */
     }
 }
+
+@media only screen and (min-width: 1517px) {
+    .left-side-bar {
+        display: flex !important; /* Use !important if necessary to override other conflicting styles */
+    }
+}
+
+
 
 /* Responsive Design */
 @media only screen and (max-width: 1367px) {
