@@ -33,12 +33,9 @@ toggleForm("add-cat-btn", "category-form-container");
 
     function populateSelectFromLocalStorage() {
         let selectTaskPerson = document.getElementById('task-person');
-        selectTaskPerson.innerHTML = ''; // Clear existing options
-    
-        // Retrieve people from local storage
+        selectTaskPerson.innerHTML = ''; 
         let existingPeople = JSON.parse(localStorage.getItem('people')) || [];
     
-        // Add each person as an option in the select dropdown
         existingPeople.forEach(person => {
             let option = document.createElement('option');
             option.value = person.name;
@@ -132,7 +129,6 @@ function populateSelectCategoriesFromLocalStorage() {
     
     
 
-    // sending cats and people to local storage
 
     document.addEventListener('DOMContentLoaded', function() {
 
@@ -148,16 +144,14 @@ function populateSelectCategoriesFromLocalStorage() {
                 let taskPerson = document.getElementById('task-person').value;
                 let taskDueDate = document.getElementById('task-due-date').value;
                 let taskDueTime = document.getElementById('task-due-time').value;
-        
-                // Combine date and time into a single dueDateTime string
-                let dueDateTime = taskDueDate + 'T' + taskDueTime;
+                        let dueDateTime = taskDueDate + 'T' + taskDueTime;
                 let dueDateObj = new Date(dueDateTime);
                 let currentDateObj = new Date();
                 let timeDiff = dueDateObj.getTime() - currentDateObj.getTime();
                 let timeDiffHours = timeDiff / (1000 * 60 * 60);
                 let color = '';
                 let taskStatus;
-                let deleted = false; // Default value for deleted
+                let deleted = false;
         
                 if (timeDiff <= 0) {
                     taskStatus = 'past due';
@@ -170,7 +164,6 @@ function populateSelectCategoriesFromLocalStorage() {
                     color = '#49B7D9';
                 }
         
-                // Generate a random 6-digit number for task id
                 let taskId = Math.floor(100000 + Math.random() * 900000);
         
                 const task = {
@@ -182,17 +175,17 @@ function populateSelectCategoriesFromLocalStorage() {
                     dueDate: taskDueDate,
                     dueTime: taskDueTime,
                     status: taskStatus,
-                    deleted: deleted // Assign deleted property here
+                    deleted: deleted 
                 };
         
                 let existingTasks = JSON.parse(localStorage.getItem('tasks1')) || [];
                 existingTasks.push(task);
                 localStorage.setItem('tasks1', JSON.stringify(existingTasks));
         
-                // Render tasks immediately after adding new task
+        
                 renderTasks();
         
-                // Clear form inputs after submission (optional)
+
                 document.querySelector('.task-name').value = '';
                 document.getElementById('task-desc').value = '';
                 document.getElementById('task-category').value = '';
@@ -204,29 +197,24 @@ function populateSelectCategoriesFromLocalStorage() {
             });
         }
         
-        // Function to render tasks from local storage
-        // Function to render tasks from local storage
+
         function renderTasks() {
             let tasksContainer = document.querySelector('.tasks-dashboard');
-            tasksContainer.innerHTML = ''; // Clear existing tasks
+            tasksContainer.innerHTML = '';
         
-            // Retrieve tasks from local storage
+
             let existingTasks = JSON.parse(localStorage.getItem('tasks1')) || [];
         
-            // Map over existingTasks to create an array of task HTML strings
             let tasksHTML = existingTasks.map(task => {
                 if(!task.deleted){
                     console.log(task.deleted)
-                // Safely access task properties with default values or empty strings
                 let taskName = task && task.name ? task.name : '';
                 let taskCategory = task && task.category ? task.category : '';
                 let taskPerson = task && task.person ? task.person : '';
                 let taskStatus = task && task.status ? task.status.toUpperCase() : '';
                 let taskDueTime = task && task.dueTime ? task.dueTime : '';
                 let taskID = task && task.id ? task.id : '';
-                let taskColor = ''; // Initialize task color variable
-        
-                // Determine color based on task status
+                let taskColor = '';
                 if (taskStatus === 'PAST DUE') {
                     taskColor = '#D94949';
                 } else if (taskStatus === 'SOON') {
@@ -240,7 +228,6 @@ function populateSelectCategoriesFromLocalStorage() {
                 }
                 
         
-                // Create task info HTML
                 let taskInfoHTML = `
                     <div class="task-info">
                         <h3>${taskName}</h3>
@@ -249,7 +236,6 @@ function populateSelectCategoriesFromLocalStorage() {
                     </div>
                 `;
         
-                // Create task buttons HTML
                 let taskBtnHTML = `
                     <div class="task-btn">
                         <i class="fa-regular fa-circle-check" data-id="${taskID}"></i>
@@ -257,7 +243,6 @@ function populateSelectCategoriesFromLocalStorage() {
                     </div>
                 `;
         
-                // Create task status HTML with dynamically set color
                 let taskStatusHTML = `
                     <div class="task-status">
                         <span><i class="fa-solid fa-circle" style="color: ${taskColor};"></i>
@@ -266,7 +251,6 @@ function populateSelectCategoriesFromLocalStorage() {
                     </div>
                 `;
         
-                // Combine all HTML parts into a single task HTML
                 return `
                     <div class="task" data-id="${taskID}">
                         ${taskInfoHTML}
@@ -277,11 +261,9 @@ function populateSelectCategoriesFromLocalStorage() {
         }
     });
         
-            // Join all task HTML strings and set the innerHTML of tasksContainer
             tasksContainer.innerHTML = tasksHTML.join('');
 
 
-            // task checked coded here 
             let checkIcons = tasksContainer.querySelectorAll('.fa-regular.fa-circle-check');
             checkIcons.innerHTML=`<i class="fa-solid fa-circle-check"></i>`
             checkIcons.forEach(icon => {
@@ -303,11 +285,10 @@ function populateSelectCategoriesFromLocalStorage() {
         
                 localStorage.setItem('tasks1', JSON.stringify(existingTasks));
         
-                renderTasks(); // Update the UI after toggling completion
+                renderTasks();
             }
     
         
-            // Add event listener to trash icons
             let trashIcons = tasksContainer.querySelectorAll('.fa-trash');
             trashIcons.forEach(icon => {
                 icon.addEventListener('click', function () {
@@ -318,16 +299,12 @@ function populateSelectCategoriesFromLocalStorage() {
         }
         
         function deleteTask(taskId) {
-            // Retrieve tasks from local storage
             let existingTasks = JSON.parse(localStorage.getItem('tasks1')) || [];
         
-            // Filter out the task with the given taskId
             existingTasks = existingTasks.filter(task => parseInt(task.id) !== parseInt(taskId));
         
-            // Update local storage with the filtered tasks array
             localStorage.setItem('tasks1', JSON.stringify(existingTasks));
         
-            // Remove the task element from the DOM
             let taskElement = document.querySelector(`.task[data-id="${taskId}"]`);
             if (taskElement) {
                 taskElement.remove();
@@ -335,7 +312,6 @@ function populateSelectCategoriesFromLocalStorage() {
         
             console.log(`Task with ID ${taskId} removed.`);
             
-            // Optional: Render tasks again to update the UI
             renderTasks();
         }
         
@@ -354,11 +330,8 @@ function populateSelectCategoriesFromLocalStorage() {
         let menuIcons = document.getElementsByClassName('menu-bar');
         let sideBars = document.getElementsByClassName('left-side-bar');
     
-        // Ensure there is at least one sidebar
         if (sideBars.length > 0) {
-            let sideBar = sideBars[0]; // Assuming you want to target the first sidebar
-    
-            // Convert HTMLCollection to an array and iterate over each element
+            let sideBar = sideBars[0]; 
             Array.from(menuIcons).forEach(icon => {
                 icon.addEventListener('click', () => {
                     if(
